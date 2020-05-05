@@ -5,7 +5,7 @@
   roles:
     - base
   tags: base
-  
+
 - name: Deploy Postgres
   hosts:
     - postgres
@@ -20,10 +20,3 @@
   roles:
     - { role: awx }
   tags: awx
-
-- name: Deploy Webhook
-  hosts:
-    - awx_instance_group_web
-  roles:
-    - { role: webhook, when: enable_webhooks == "yes" }
-  tags: webhook
